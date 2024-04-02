@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-with open('home.html','r' ) as html_file:
+with open('./Basic/home.html','r' ) as html_file:
     content= html_file.read()
     # print(content)
     
@@ -8,16 +8,16 @@ with open('home.html','r' ) as html_file:
     #print(soup.prettify())
     
 #for 1st tag item:   
-    #tags= soup.find('h3')
+    tags= soup.find('h3')
     
 #for all tag items: 
-    # tags= soup.find_all('h5')
-    # print(tags)
+    tags= soup.find_all('h5')
+    print(tags)
  
 #only course names   
-    # courses_html_tags= soup.find_all('h5')
-    # for course in courses_html_tags:
-    #     print(course.text)
+    courses_html_tags= soup.find_all('h5')
+    for course in courses_html_tags:
+        print(course.text)
     
 #for course cards
     course_card = soup.find_all('div', class_ = 'card')
